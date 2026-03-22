@@ -1,0 +1,3 @@
+Transformers are neural network architectures used in NLP.
+They rely on self attention mechanisms.
+They are widely used in models like GPT and BERT.
