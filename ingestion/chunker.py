@@ -1,7 +1,15 @@
-def chunk_text(text, chunk_size=500):
+def chunk_text(text, chunk_size=300, overlap=50):
     chunks = []
+    
+    start = 0
+    text_length = len(text)
 
-    for i in range(0, len(text), chunk_size):
-        chunks.append(text[i:i+chunk_size])
+    while start < text_length:
+        end = start + chunk_size
+        
+        chunk = text[start:end]
+        chunks.append(chunk)
+        
+        start += chunk_size - overlap
 
     return chunks
