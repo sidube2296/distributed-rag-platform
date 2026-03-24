@@ -1,17 +1,18 @@
 import subprocess
 
-def generate_answer(context, question):
+def generate_answer(context, query):
 
     prompt = f"""
-You are an intelligent assistant.
+You are an AI assistant.
 
-Use the context below to answer the question clearly.
+Answer the question ONLY based on the context below.
+If the context is not relevant, say "I don't know".
 
 Context:
 {context}
 
 Question:
-{question}
+{query}
 """
 
     result = subprocess.run(
@@ -21,4 +22,4 @@ Question:
         capture_output=True
     )
 
-    return result.stdout
+    return result.stdout.strip()
